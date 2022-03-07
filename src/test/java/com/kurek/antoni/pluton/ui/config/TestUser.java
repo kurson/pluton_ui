@@ -34,6 +34,6 @@ public class TestUser implements OAuth2User {
 
     @Override
     public String getName() {
-        return "what is this used for?";
+        return "principal name?";
     }
 }
