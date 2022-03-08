@@ -8,5 +8,8 @@
 <body>
 <h1>Welcome [[${userInfo.name}]]</h1>
 <img th:src="@{/images/logo.png}" alt="logo" src=""/>
+<ul th:each="ownedPortfolio : ${ownedPortfolios}">
+    <li th:text="${ownedPortfolio.name()}"></li>
+</ul>
 </body>
 </html>
