@@ -1,7 +1,7 @@
 package com.kurek.antoni.pluton.ui.homeView;
 
 import com.kurek.antoni.pluton.ui.UserInfo;
-import com.kurek.antoni.pluton.ui.dtos.OwnedPortfolioDto;
+import com.kurek.antoni.pluton.ui.dtos.PortfolioLink;
 import lombok.AllArgsConstructor;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Controller;
@@ -26,9 +26,9 @@ public class HomeController {
         return new UserInfo(token);
     }
 
-    @ModelAttribute(name = "ownedPortfolios")
-    public OwnedPortfolioDto[] ownedPortfolios(@ModelAttribute("userInfo") UserInfo userInfo) throws URISyntaxException, IOException
-            , InterruptedException {
-        return this.handler.getOwnedPortfolios(userInfo.email());
+    @ModelAttribute(name = "ownedPortfolioLinks")
+    public PortfolioLink[] ownedPortfolios(@ModelAttribute("userInfo") UserInfo userInfo) throws URISyntaxException,
+            IOException, InterruptedException {
+        return this.handler.getOwnedPortfolioLinks(userInfo.email());
     }
 }
