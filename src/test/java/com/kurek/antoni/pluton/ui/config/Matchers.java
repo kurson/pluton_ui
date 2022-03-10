@@ -10,7 +10,7 @@ public class Matchers {
     public static HttpRequest getOwnedPortfoliosRequest(String email) {
         return argThat((HttpRequest r) -> r.uri()
                                            .toString()
-                                           .contains("/ownedPortfolios/" + email)
+                                           .contains("/portfolio/owned/" + email)
                 && r.method().equals("GET"));
     }
 

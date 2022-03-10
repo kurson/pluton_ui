@@ -36,7 +36,7 @@ public class HomeHandler {
             InterruptedException {
         try {
             HttpResponse<String> response = httpClient.send(HttpRequest.newBuilder()
-                                                                       .uri(new URI("http://" + portfolioStorageUri + "/ownedPortfolios/" + email))
+                                                                       .uri(new URI("http://" + portfolioStorageUri + "/portfolio/owned/" + email))
                                                                        .GET()
                                                                        .build(),
                                                             HttpResponse.BodyHandlers.ofString());
