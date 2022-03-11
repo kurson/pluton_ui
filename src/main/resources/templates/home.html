@@ -3,13 +3,37 @@
       xmlns:th="http://www.thymeleaf.org" lang="eng">
 <head>
     <title>Pluton</title>
+    <style>
+        .emoji-bullet:before {
+            content: "➕";
+            margin: 0 16px 0 0;
+        }
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
 <h1>Welcome [[${userInfo.name}]]</h1>
 <img th:src="@{/images/logo.png}" alt="logo" src=""/>
-<ul th:each="portfolio : ${ownedPortfolioLinks}" style="list-style-type:none">
-    <li><a th:href="@{${portfolio.href()}}" th:text="${portfolio.text()}"></a></li>
+<ul style="list-style-type:none">
+    <th:block th:each="portfolio : ${ownedPortfolioLinks}">
+        <li><a th:href="@{${portfolio.href()}}" th:text="${portfolio.text()}"></a></li>
+    </th:block>
+    <li><a th:href="@{portfolio/new}" class="emoji-bullet">Add new portfolio</a></li>
 </ul>
 </body>
 </html>

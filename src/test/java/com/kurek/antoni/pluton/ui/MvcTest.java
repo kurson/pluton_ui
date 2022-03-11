@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class HomeControllerTest {
+class MvcTest {
     @MockBean
     HttpClient client;
     @Autowired
@@ -59,5 +59,4 @@ class HomeControllerTest {
         //todo sendAsync
         verify(client).send(getOwnedPortfoliosRequest(email), responseHandler());
     }
-
 }

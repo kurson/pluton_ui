@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="eng">
+<head>
+    <title>New portfolio</title>
+</head>
+
+<body>
+<h2>Create new portfolio</h2>
+<form th:object="${formData}" method="post">
+    <div>
+        <label for="name">Title</label>
+        <input id="name" type="text"
+               th:field="*{name}">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <input id="description" type="text"
+               th:field="*{description}">
+    </div>
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>
